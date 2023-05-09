@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;600;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  * {
+    @apply font-inter selection:bg-primary selection:text-dark;
+  }
+}
+
+@layer components {
+  .logo {
+    @apply h-36 w-36 flex flex-col items-center justify-evenly rounded-xl hover:scale-105  transition-all ease-in-out duration-300 shadow-lg border;
+  }
+  
+  .menu-item {
+    @apply flex items-center gap-3 hover:text-primary hover:border-b hover:border-b-2 hover:border-primary;
+  }
+  
+  #toggle:checked ~ label div .toggle-circle {
+     @apply translate-x-7;
+  }
+  
+  #toggle:checked ~ label div .toggle-circle::after {
+     content: '🌚';
+     @apply absolute top-0.5 right-1;
+  }
+  
+  #toggle ~ label div .toggle-circle::after {
+     content: '🌞';
+     @apply absolute top-0.5 right-1;
+  }
+  
+  .skill {
+    @apply w-full rounded-xl py-6 bg-primary flex flex-col items-center shadow-lg;
+  }
+  
+  .project {
+    @apply w-full border border-2 rounded-xl shadow-lg overflow-hidden;
+  }
+  
+  .thumb {
+    @apply aspect-video object-cover group-hover:scale-105 transition-all duration-300 ease-in;
+  }
+}
+
+@layer utilities {
+  li::marker {
+    @apply text-primary;
+  }
+}
